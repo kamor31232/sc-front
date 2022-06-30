@@ -1,5 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  ssr: false,
+  target: 'static',
   head: {
     title: 'sc-front',
     htmlAttrs: {
@@ -27,6 +29,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -43,9 +46,14 @@ export default {
     baseURL: '/',
   },
 
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // https://github.com/primefaces/primevue/issues/844
-    transpile: ['primevue'],
+    transpile: ['primevue', 'tailwindcss'],
   },
 }

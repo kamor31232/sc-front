@@ -38,6 +38,21 @@ export default {
     'primevue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/i18n',
+      {
+        locales: [
+          {
+            code: 'es',
+            file: 'es.js',
+            name: 'Español',
+          },
+        ],
+        lazy: true,
+        langDir: 'lang/',
+        defaultLocale: 'es',
+      },
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
